@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @course.nome %>
+</p>
+
+<p>
+  <strong>Abreviacao:</strong>
+  <%= @course.abreviacao %>
+</p>
+
+<p>
+  <strong>Site:</strong>
+  <%= @course.site %>
+</p>
+
+<p>
+  <strong>Modalidade:</strong>
+  <%= @course.modalidade %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @course.email %>
+</p>
+
+<p>
+  <strong>Cordenador:</strong>
+  <%= @course.coordinator.nome %>
+</p>
+
+<p>
+  <strong>Matricula:</strong>
+  <%= @course.coordinator.matricula %>
+</p>
+
+<p>Estudantes</p>
+
+<table>
+  <thead>
+    <tr>
+    <td>Nome</td>
+    <td>Matricula</td>
+  </tr>  
+  </thead>
+  <tbody>
+    <% @course.students.each do |estudante| %>
+    <tr>
+      <td><%= estudante.nome %></td>
+      <td><%= estudante.matricula %></td>
+    </tr>  
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>

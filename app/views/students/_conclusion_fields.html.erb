@@ -1,0 +1,17 @@
+<div class="nested-fields">
+	<div class="field">
+		<%
+		if @student.conclusions.count == 0
+			opcao = 1
+		else
+			opcao = @student.conclusions[f.index.to_i].tipo
+		end
+		%>
+		<%= f.label :semestre %>		
+		<%= f.select :semestre, options_for_select([
+			["1",1],
+			["2",2]			
+			], opcao)%>				
+		<%= link_to_remove_association('[Remover]',f)%>
+	</div>	
+</div>

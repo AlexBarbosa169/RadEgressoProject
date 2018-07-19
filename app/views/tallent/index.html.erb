@@ -1,0 +1,34 @@
+<h1>Tallent#index</h1>
+<p>Find me in app/views/tallent/index.html.erb</p>
+
+<h1>Students</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Matricula</th>
+      <th>Senha</th>
+      <th>Perfil publico</th>
+      <th>Homologado</th>
+      <th>Course</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.nome %></td>
+        <td><%= student.matricula %></td>
+        <td><%= student.senha %></td>
+        <td><%= student.perfil_publico %></td>
+        <td><%= student.homologado %></td>
+        <td><%= student.course %></td>
+        <td><%= link_to 'Show', student %></td>
+        <td><%= link_to 'Edit', edit_student_path(student) %></td>
+        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
