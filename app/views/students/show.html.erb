@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<!--<p>
   <strong>Nome:</strong>
   <%= @student.nome %>
 </p>
@@ -27,8 +27,23 @@
 
 <p>
   <strong>Course:</strong>
-  <%= @student.course %>
+  <%= @student.course.nome %>
 </p>
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+<%= link_to 'Back', students_path %>-->
+
+<div class="card" style="width: 18rem; margin: auto;">
+  <img class="card-img-top" src="http://eatoledo.com.br/src/img/foto-ernane-avatar.jpg" alt="Card image cap" style="border-radius: 50%;">
+  <div class="card-body">
+    <h5 class="card-title"><%= @student.nome %></h5>
+    <p class="card-text">Aluno egresso do curso <%= @student.course.nome %>.</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><%= @student.matricula %></li>    
+  </ul>
+  <div class="card-body">
+    <a href="<%= edit_student_path(@student) %>" class="card-link">Editar</a>
+    <a href="<%= students_path %>" class="card-link">Voltar</a>    
+  </div>
+</div>

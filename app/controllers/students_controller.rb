@@ -5,6 +5,7 @@ class StudentsController < ApplicationController
   # GET /students.json
   def index
     @students = Student.all
+    @students_public = Student.where(perfil_publico:"S")
   end
 
   # GET /students/1
@@ -72,6 +73,7 @@ class StudentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
       params.require(:student).permit(:nome, :matricula, :senha, :perfil_publico, 
-                    :homologado, :course_id, contacts_attributes: [:id,:tipo,:valor, :destroy], conclusions_attributes: [:id,:ano,:semestre, :destroy])
+                    :homologado, :course_id, contacts_attributes: [:id,:tipo,:valor, :destroy], 
+                    conclusions_attributes: [:id,:ano,:semestre, :destroy])
     end
 end

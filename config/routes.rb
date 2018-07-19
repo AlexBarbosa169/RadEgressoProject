@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'mannager_tallent/index'
+
   get 'tallent/index'
 
   get 'home/index'

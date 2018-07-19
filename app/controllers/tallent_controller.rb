@@ -1,5 +1,5 @@
 class TallentController < ApplicationController
-  def index
-  	@students = Student.where(homologado:"S")
+  def index  	
+  	@students = Student.all
   end
 end

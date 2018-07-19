@@ -26,14 +26,14 @@
     <%= form.text_field :senha, id: :student_senha %>
   </div>
 
-  <div class="field">
-    <%= form.label :perfil_publico %>
-    <%= form.text_field :perfil_publico, id: :student_perfil_publico %>
+  <div class="field">    
+    <%= form.label :perfil_publico %>    
+    <%= form.select :perfil_publico ,options_for_select([["Sim", "S"], ['Não', "N"],]) %>
   </div>
 
   <div class="field">
-    <%= form.label :homologado %>
-    <%= form.text_field :homologado, id: :student_homologado %>
+    <%= form.label :homologado %>    
+    <%= form.select :homologado ,options_for_select([["Sim", "S"], ['Não', "N"],]) %>
   </div>
 
   <div class="field">
@@ -50,10 +50,10 @@
   </div>
 
   <div id="conclusions">
-    <%= form.fields_for :contacts do |conclusions_fields| %>
+    <%= form.fields_for :conclusions do |conclusions_fields| %>
       <%= render partial:"conclusion_fields", locals: {f: conclusions_fields} %>      
     <% end %>
-    <%= link_to_add_association('[Adicionar Conclusão]',form, :contacts) %>
+    <%= link_to_add_association('[Adicionar Conclusão]',form, :conclusions) %>
   </div>
 
   <div class="actions">
